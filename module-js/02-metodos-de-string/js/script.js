@@ -79,7 +79,7 @@ Ejercicio 1:
     regresar en una sola cadena donde el nombre sea minusculas y los apellidos sean mayusculas
     input nombre = "Ivan"
     input Apellido = "Diaz"
-    Output: "fernanda PALACIOS"
+    Output: "ivan DIAZ"
 */
 
 
