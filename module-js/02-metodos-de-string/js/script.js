@@ -68,7 +68,7 @@ let nombre = 'pepe pecas pica papas con un pico';
 // let converterName = nombre.match(/p/g);
 // console.log(nombre.length, 'nombre.length')
 
-console.log(converterName);
+// console.log(converterName);
 
 
 // Ejercicios
@@ -83,7 +83,52 @@ Ejercicio 1:
 */
 
 
-/*
+// const converterName = function () {
+//     const name = prompt('Cual es tu nombre ?');
+//     const lastName =  prompt('Cual es tu apellido');
+//     const newName = name.toLowerCase();
+//     const newLastName = lastName.toUpperCase();
+//     return ` ${newName} ${newLastName}`
+// };
+
+// console.log(converterName());
+
+
+// solicitar el nombre completo de usuario
+// buscar el metodo adecuado
+// contar resultado del metodo
+// mostrar el resultado 
+
+// const frase = 'hola';
+
+// function requestName (texto, textoAbuscar) {
+//     const coincidencias = texto.match(/estudiante/g);
+//     console.log(coincidencias);
+//     const newTexto = texto.replace(/estudiante/g, 'koder')
+//     console.log(newTexto)
+//     console.log(`Esta palabra contiene ${coincidencias.length} coincidencias`)
+// };
+
+// requestName(frase, 'estudiante')
+
+
+
+// function calculateLenght (firstWord, secondWord) {
+//     if(firstWord.length > secondWord.length) {
+//         console.log(firstWord)
+//     } else if (firstWord.length < secondWord.length) {
+//         console.log(secondWord);
+//     } else {
+//         console.log('son iguales')
+//     }
+// }
+
+
+
+
+
+
+/*]]]
 Ejercicio 2:
     Solicitar el nombre completo de un usuario e indicarle cuantos caracteres tiene su nombre
 */
@@ -109,3 +154,49 @@ Ejercicio 5:
     input: 'Programación Javascript'
     Output: 'Programación'
 */
+
+
+
+
+
+// const nombres = [
+//     { nombre: 'freddy',}, 
+//     { nombre: 'michael'} , 
+//     { nombre: 'rafa'}
+// ];
+
+// const person = {
+//     nombre: 'freddy',
+//     apellido: 'Krueger',
+//     edad: 40,
+// };
+
+// console.log(nombres[1])
+// console.log(nombres[0])
+
+// for (let i = 0; i < nombres.length; i++) {
+//     console.log(nombres[i].nombre)
+//     // const element = array[index];
+// }
+
+let vuelta = 0;
+
+while(vuelta < 10) {
+    console.log(vuelta, 'vuelta')
+    if(vuelta % 2 === 0) {
+        console.log(`${vuelta} es par`)
+    } else {
+        console.log(`${vuelta} es impar`)
+    }
+    // console.log('se cumpli condicion con while')
+    vuelta++
+}
+
+do {
+    console.og
+} while (vuelta < 10)
+
+// for ( killer in person ) {
+//     console.log(killer)
+//     console.log( person[killer] )
+// }
