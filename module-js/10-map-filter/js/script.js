@@ -259,7 +259,7 @@ const coverageByMentor = (mentorsArray) => {
     return newMentors;
 };
 
-console.log(coverageByMentor(mentorsArray))
+// console.log(coverageByMentor(mentorsArray))
 
 // -Obtener la lista de mentores cuyo promedio sea mayor a 9.5 
 
@@ -273,5 +273,37 @@ const getFilter = () => {
 return newMentos;
 };
 
-console.log(getFilter())
+// console.log(getFilter())
 
+const numbers = [1,5,6];
+
+const newNumbers = numbers.filter((number) => {
+    return number > 4
+});
+
+console.log(newNumbers, 'newNumbers')
+
+
+// crear un array de strings con la siguiente forma:
+//     "Mi nombre es {nombre} y mi promedio es de {promedio}"
+const newArrayMentors = coverageByMentor(mentorsArray);
+console.log(newArrayMentors)
+const useMap = newArrayMentors.map((mentors) => {
+ 
+})
+// console.log(useMap, 'useMao')
+
+'The Cure'
+
+const songs = songsData.filter((item) => item.band === 'The Cure' || item.name === 'asdasdasdsad');
+
+console.log(songs)
+// {
+//     name: "asdasdasdsad",
+//     band: "The Cure",
+//     releaseYear: "1980",
+//     statistics: {
+//       likes: 2545109856,
+//       reproductions: 4324309,
+//     }
+//   },
