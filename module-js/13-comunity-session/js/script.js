@@ -1,4 +1,5 @@
-// Obtener todos los tags que existen
+
+
 // Ordenar los libros en orden alfabetico
 // realizar filtrado dinamico por genero,
 // realizar busqueda por titulo, encontrar coincidencias
@@ -20,7 +21,7 @@ const bookList = [
             currencyCode:"USD"
         },
         publishedDate:"2019-10-15",
-        tag :[
+        tags :[
             "Juvenile Fiction",
         ]
     },
@@ -36,7 +37,7 @@ const bookList = [
             currencyCode:"USD"
         },
         publishedDate:"2019-10-15",
-        tag :[
+        tags :[
             "Juvenile Fiction",
         ]
     },
@@ -133,32 +134,137 @@ const bookList = [
         },
         publishedDate:"2006-06-12",
         tags :[
-            "Golum","Dragons","Best Seller"
+            "Golum",
+            "Dragons",
+            "Best Seller"
         ]
     },
 ];
 
 
+// Obtener todos los tags que existen
+// [
+//     'tag1', 
+//     'tag2',
+// ]
+
+// Crear una funcion
+// Iterar el arreglo bookList
+// obtener la propiedad de tags
+// iterar el arreglo de tags
+// Crear variable para guardar los tags
+// comparar si existe en mi variable
+// veo si lo agrego o no 
+
+
+
+const getTags = () => {
+    let tags = [];
+    console.log(bookList.length)
+    bookList.forEach((item) => {
+        console.log(item.tags)
+        item.tags.forEach((tag) =>{
+            if(!tags.includes(tag)) {
+                tags.push(tag)
+            }
+        })
+    });
+    return tags;
+};
+
+
+// -Ordenar los libros en orden alfabetico tomando el nombre
+// crar la funcion 
+// irterar el arreglo de libros
+// tomar el nombre de cada libro 
+// usar el metodo sort para ordenarlos 
+// returnar el arreglo ordenado 
+
+const orderBooks = () => {
+    return bookList.sort(function (book, otherBook) {
+
+        if (book.name > otherBook.name) {
+          return 1;
+        }
+        if (book.name < otherBook.name) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      })
+
+};
+
+console.log(orderBooks())
+
+
+// ['objeto del libro']
+
+// realizar filtrado dinamico por genero,
+
+// escribir funcion que reciba el genero como parametro 
+// usar filter, reduce para iterar el arreglo
+// retornar el arreglo filtado 
+
+const getBooksByGenre = (genreToFilter) => {
+    return bookList.filter((item) => item.genre_s === genreToFilter);
+};
+console.log(getBooksByGenre('fantasy'))
+
+
+
+
+
+
+// realizar busqueda por titulo, encontrar coincidencias
+
+// [
+//     libros
+// ]
+
+// generar la fncion que reciba que parametro el nombre la palabra a buscar
+// crar un arreglo vacio donde guarademos los libros con coincidencias
+// usar un filter usando de condicion un a expresion regular o usando includes
+// retornar el arreglo con los libros con coincidencias
+
+
+
+const getBookByTitle = (search) => {
+    return bookList.filter((book) => {
+        return book.name.includes(search);
+        // const regex = new RegExp(search, 'g');
+        // console.log(regex)
+        // return book.name.match(regex)
+    });
+};
+
+console.log(getBookByTitle('Cats'))
+
+
+
+
+
+
 // Fucnion declarativa 
 
-[1,2].forEach(() => {});
+// [1,2].forEach(() => {});
 
-function name(params) {
-    return
-};
+// function name(params) {
+//     return
+// };
 
-const numbers = [1, 2,4];
+// const numbers = [1, 2,4];
 
 
-const getResult = (array, callback) => {
-    console.log(array)
-};
+// const getResult = (array, callback) => {
+//     console.log(array)
+// };
 
-const promediar = () => {
-console.log('funcion prodemdiar')
-};
+// const promediar = () => {
+// console.log('funcion prodemdiar')
+// };
 
-getResult(numbers, promediar )
+// getResult(numbers, promediar )
 
 
 // Funcion de expresion 
