@@ -1,34 +1,45 @@
-console.log(document)
+// console.log(document)
 
-const h1 = document.createElement("h1");
-const text = document.createTextNode("Hola Koders");
+// const h1 = document.createElement("h1");
+// const text = document.createTextNode("Hola Koders");
 
-h1.appendChild(text)
+// h1.appendChild(text)
 
-document.body.appendChild(h1);
+// document.body.appendChild(h1);
 
-console.log(h1)
+// console.log(h1)
 
-const personas = [
-  'quienes somos?',
-  'contacto',
-  'login',
-];
+// const personas = [
+//   'quienes somos?',
+//   'contacto',
+//   'login',
+// ];
 
-// iterar el arreglo
-const ul = document.createElement('ul');
-personas.forEach((persona) => {
-  const li = document.createElement('li');
-  const text = document.createTextNode(persona);
-  li.appendChild(text);
-  ul.appendChild(li)
-});
+// // iterar el arreglo
+// const ul = document.createElement('ul');
+// personas.forEach((persona) => {
+//   const li = document.createElement('li');
+//   const text = document.createTextNode(persona);
+//   li.appendChild(text);
+//   ul.appendChild(li)
+// });
 
-document.body.appendChild(ul);
+// document.body.appendChild(ul);
 
 
 
 // Crear tabla con el sigueinte arreglo
+
+[
+    {
+        name:"Ivan Diaz",
+        html: 90,
+        css:90,
+        js:10,
+        reactJs: 90,
+        promedio: 9.3
+    }
+]
 
 const mentorsArray = [
   {
@@ -116,3 +127,81 @@ const mentorsArray = [
       ]
   },
 ]
+
+const headers = [
+    'Mentor',
+    'HTML',
+    'CSS',
+    'JS',
+    'REACT',
+    'PROMEDIO',
+];
+
+
+// [
+//     {
+//         name:"Ivan Diaz",
+//         html: 90,
+//         css:90,
+//         js:10,
+//         reactJs: 90,
+//         promedio: 9.3
+//     }
+// ]
+
+const getMentors = mentorsArray.map(( mentor ) => {
+    const data = {
+        mentor: mentor.name,
+    };
+    let average = 0
+    mentor.scores.forEach((signature) => {
+        if(!data[signature.signature]) {
+            data[signature.signature] = signature.score;
+        }
+
+        average += signature.score / mentor.scores.length;
+    });
+
+    data.average = average;
+return data;
+});
+
+// Crear el tabla
+// -Crear el thead de la tabla
+// crear un row 
+// Iterar un arreglo que tenga los heads
+// crear un th por cada elemento de ese arreglo  
+
+
+// -Crear Tbody de la tabla
+
+const table = document.createElement('table');
+const theadTable = document.createElement('thead');
+const tr = document.createElement('tr');
+
+headers.forEach((element) => {
+    const th = document.createElement('th');
+    const title = document.createTextNode(element);
+    th.appendChild(title);
+    tr.appendChild(th);
+});
+
+theadTable.appendChild(tr);
+table.appendChild(theadTable);
+// ---------------
+
+const tbody = document.createElement('tbody');
+getMentors.forEach((mentor) => {
+    const trBody = document.createElement('tr');
+
+    for(element in mentor) {
+        const td = document.createElement('td');
+        td.textContent = mentor[element];
+        trBody.appendChild(td);
+    }
+
+    tbody.appendChild(trBody);
+});
+
+table.appendChild(tbody);
+document.body.appendChild(table);
